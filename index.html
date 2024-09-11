@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" />
+  <link rel="shortcut icon" href="https://clubmusa-bucket.s3.ap-southeast-1.amazonaws.com/logo_wolcg_4ed647d460.svg" />
+  <link rel="icon" href="https://clubmusa-bucket.s3.ap-southeast-1.amazonaws.com/logo_wolcg_4ed647d460.svg" />
+  <title>WOLCG - Open API Communication Protocol Of Word Of Life USA</title>
+  <style>
+    body {
+      margin: 0;
+      line-height: normal;
+    }
+    .cuves-1 {
+      position: absolute;
+      height: 94%;
+      width: 100%;
+      top: 6.01%;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    .home-section .open-api-name {
+      align-self: stretch;
+      position: relative;
+      line-height: 32px;
+    }
+    .home-section .open-api-description {
+      align-self: stretch;
+      position: relative;
+      font-size: 18px;
+      line-height: 28px;
+    }
+    .button-display-name {
+      position: relative;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+      background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), #fff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .home-section .copyrightable-icon {
+      width: 16px;
+      position: relative;
+      height: 16px;
+    }
+    .home-section .open-api-button-parent {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background-color: #007bff;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      gap: 10px;
+      text-align: center;
+      font-size: 16px;
+    }
+    .home-section .open-api-parent {
+      align-self: stretch;
+      border-radius: 10px;
+      background-color: #e9ecef;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 50px 36px;
+      gap: 30px;
+    }
+    .home-section .open-api-info-group-des {
+      align-self: stretch;
+      position: relative;
+      font-size: 20px;
+      line-height: 32px;
+      font-weight: 600;
+    }
+    .home-section .a-dng-phng {
+      margin: 0;
+    }
+    .home-section .a-dng-phng-container {
+      align-self: stretch;
+      position: relative;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .home-section .chi-tit-parent {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background-color: #007bff;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      gap: 10px;
+      text-align: center;
+    }
+    .home-section .open-api-info-api {
+      width: 660px;
+      border-radius: 10px;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 20px 30px;
+      gap: 30px;
+    }
+    .home-section .frame-container {
+      align-self: stretch;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      gap: 30px;
+      font-size: 16px;
+    }
+    .home-section.frame-group {
+      width: 1350px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 30px;
+    }
+    .wolcg-text {
+      color: #00afef !important;
+    }
+    .copyright-2024-container {
+      position: relative;
+      line-height: 28px;
+    }
+    .copyright-2024-wolcg-all-ri-parent {
+      width: 100%;
+      position: relative;
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .copyright-2024-wolcg-all-ri-parent span {
+      text-align: left;
+      font-size: 18px;
+      color: #000000;
+      font-family: Roboto;
+    }
+    .frame-parent {
+      position: absolute;
+      top: 120px;
+      left: 0;
+      width: 1920px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 30px;
+    }
+    .group-icon {
+      width: 48px;
+      position: relative;
+      height: 48px;
+      object-fit: cover;
+    }
+    .divheader-body-logo {
+      height: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 10px 0;
+      box-sizing: border-box;
+    }
+    .wolcg {
+      position: relative;
+      line-height: 32px;
+      background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), #fff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .divheader-body-logo-parent {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+      font-size: 20px;
+    }
+    .frame-div {
+      position: absolute;
+      top: 21px;
+      left: 46px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 30px;
+    }
+    .home-inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #005aa9;
+      width: 1920px;
+      height: 90px;
+      overflow: hidden;
+      font-size: 16px;
+    }
+    .home {
+      width: 100%;
+      /*position: relative;*/
+      background-color: #fff;
+      /*height: calc(1146px + 2430px + 794px);*/
+      overflow: hidden;
+      text-align: left;
+      font-size: 32px;
+      color: #000;
+      font-family: Roboto;
+    }
+
+    /* Contact */
+    .contact-section .contact-help-info {
+      align-self: stretch;
+      position: relative;
+      font-size: 16px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .contact-section .contact-help-parent {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+    .contact-section  .frame-wrapper {
+      width: 829px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .contact-section .contact-help-title {
+      align-self: stretch;
+      position: relative;
+      line-height: 32px;
+    }
+    .contact-section .e-mail-support {
+      margin: 0;
+    }
+    .contact-section.frame-group {
+      width: 1350px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 30px;
+      font-size: 24px;
+    }
+
+    /* downloads */
+    .downloads-section .downloads {
+      align-self: stretch;
+      position: relative;
+      font-size: 24px;
+      line-height: 32px;
+      top: 5px;
+    }
+    .downloads-section .downloads-title {
+      align-self: stretch;
+      position: relative;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+      top: 5px;
+      bottom: 5px;
+      padding-bottom: 10px;
+    }
+    .downloads-section .downloads-parent {
+      width: 829px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 30px;
+    }
+    .downloads-section .kch-bn-test-case-sit {
+      margin: 0;
+      font-family: inherit;
+      font-size: inherit;
+      padding-left: 21px;
+    }
+    .downloads-section .kch-bn-test-container {
+      align-self: stretch;
+      position: relative;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+      color: #005aa9;
+    }
+    .downloads-section .frame-child {
+      position: absolute;
+      top: 58px;
+      left: 0;
+      background-color: #f2f2f2;
+      width: 1350px;
+      height: 71px;
+    }
+    .downloads-section .frame-item {
+      position: absolute;
+      top: 199px;
+      left: 0;
+      background-color: #f2f2f2;
+      width: 1350px;
+      height: 71px;
+    }
+    .downloads-section .frame-inner {
+      position: absolute;
+      top: 57.5px;
+      left: -0.5px;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1351px;
+      height: 1px;
+    }
+    .downloads-section .line-div {
+      position: absolute;
+      top: 128.5px;
+      left: -0.5px;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1351px;
+      height: 1px;
+    }
+    .downloads-section .frame-child1 {
+      position: absolute;
+      top: 199.5px;
+      left: -0.5px;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1351px;
+      height: 1px;
+    }
+    .downloads-section .frame-child2 {
+      position: absolute;
+      top: 270.5px;
+      left: -0.5px;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1351px;
+      height: 1px;
+    }
+    .downloads-section .frame-child3 {
+      position: absolute;
+      top: 341.5px;
+      left: -0.5px;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1351px;
+      height: 1px;
+    }
+    .downloads-section .frame-child4 {
+      position: absolute;
+      top: -0.5px;
+      left: 86.5px;
+      border-right: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1px;
+      height: 343px;
+    }
+    .downloads-section .frame-child5 {
+      position: absolute;
+      top: -0.5px;
+      left: 525.5px;
+      border-right: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1px;
+      height: 343px;
+    }
+    .downloads-section .stt {
+      position: absolute;
+      top: 16px;
+      left: 32px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .div {
+      position: absolute;
+      top: 82px;
+      left: 43px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .div1 {
+      position: absolute;
+      top: 152px;
+      left: 43px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .div2 {
+      position: absolute;
+      top: 223px;
+      left: 43px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .div3 {
+      position: absolute;
+      top: 295px;
+      left: 43px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .h-thng-thanh {
+      position: absolute;
+      top: 16px;
+      left: 113px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .link-download {
+      position: absolute;
+      top: 16px;
+      left: 552px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .downloads2 {
+      position: absolute;
+      top: 152px;
+      left: 552px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+      color: #005aa9;
+    }
+    .downloads-section .downloads3 {
+      position: absolute;
+      top: 226px;
+      left: 552px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+      color: #005aa9;
+    }
+    .downloads-section .downloads4 {
+      position: absolute;
+      top: 295px;
+      left: 552px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+      color: #005aa9;
+    }
+    .downloads-section .thanh-ton-pay {
+      position: absolute;
+      top: 79px;
+      left: 113px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .thanh-ton-bng {
+      position: absolute;
+      top: 151px;
+      left: 113px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .thanh-ton-tr {
+      position: absolute;
+      top: 223px;
+      left: 113px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .thanh-ton-nh {
+      position: absolute;
+      top: 295px;
+      left: 117px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .rectangle-parent {
+      align-self: stretch;
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      height: 273px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .downloads-section .frame-child12 {
+      position: absolute;
+      top: -0.5px;
+      left: 86.5px;
+      border-right: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1px;
+      height: 405px;
+    }
+    .downloads-section .frame-child13 {
+      position: absolute;
+      top: -0.5px;
+      left: 525.5px;
+      border-right: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1px;
+      height: 405px;
+    }
+    .downloads-section .div8 {
+      position: absolute;
+      top: 360px;
+      left: 43px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .downloads9 {
+      position: absolute;
+      top: 360px;
+      left: 552px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+      color: #005aa9;
+    }
+    .downloads-section .nodejs {
+      position: absolute;
+      top: 360px;
+      left: 117px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .rectangle-group {
+      align-self: stretch;
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      height: 131px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .downloads-section .frame-child14 {
+      position: absolute;
+      top: 58px;
+      left: 0;
+      background-color: #f2f2f2;
+      width: 897px;
+      height: 71px;
+    }
+    .downloads-section .frame-child15 {
+      position: absolute;
+      top: 58px;
+      left: 897px;
+      background-color: #f2f2f2;
+      width: 453px;
+      height: 72px;
+    }
+    .downloads-section .frame-child16 {
+      position: absolute;
+      top: 199px;
+      left: 0;
+      background-color: #f2f2f2;
+      width: 897px;
+      height: 71px;
+    }
+    .downloads-section .frame-child18 {
+      position: absolute;
+      top: 128.5px;
+      left: -0.5px;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 898px;
+      height: 1px;
+    }
+    .downloads-section .frame-child19 {
+      position: absolute;
+      top: 199.5px;
+      left: -0.5px;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 898px;
+      height: 1px;
+    }
+    .downloads-section .frame-child20 {
+      position: absolute;
+      top: 270.5px;
+      left: -0.5px;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 898px;
+      height: 1px;
+    }
+    .downloads-section .frame-child21 {
+      position: absolute;
+      top: 341.5px;
+      left: -0.5px;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 898px;
+      height: 1px;
+    }
+    .downloads-section .frame-child24 {
+      position: absolute;
+      top: -0.5px;
+      left: 896.5px;
+      border-right: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1px;
+      height: 343px;
+    }
+    .downloads-section .hng-dn {
+      position: absolute;
+      top: 17px;
+      left: 929px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .download {
+      position: absolute;
+      top: 82px;
+      left: 552px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+      color: #005aa9;
+    }
+    .downloads-section .ti-liu-tch {
+      position: absolute;
+      top: 80px;
+      left: 928px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+      color: #005aa9;
+    }
+    .downloads-section .frame-child32 {
+      position: absolute;
+      top: 403.5px;
+      left: -0.5px;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1351px;
+      height: 1px;
+    }
+    .downloads-section .frame-child33 {
+      position: absolute;
+      top: 465.5px;
+      left: -0.5px;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1351px;
+      height: 1px;
+    }
+    .downloads-section .frame-child34 {
+      position: absolute;
+      top: 527.5px;
+      left: -0.5px;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1351px;
+      height: 1px;
+    }
+    .downloads-section .frame-child35 {
+      position: absolute;
+      top: -0.5px;
+      left: 86.5px;
+      border-right: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1px;
+      height: 529px;
+    }
+    .downloads-section .frame-child36 {
+      position: absolute;
+      top: -0.5px;
+      left: 525.5px;
+      border-right: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      width: 1px;
+      height: 529px;
+    }
+    .downloads-section .div18 {
+      position: absolute;
+      top: 422px;
+      left: 43px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .div19 {
+      position: absolute;
+      top: 483px;
+      left: 43px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .hng-dn-ci5 {
+      position: absolute;
+      top: 423px;
+      left: 552px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+      color: #005aa9;
+    }
+    .downloads-section .hng-dn-ci6 {
+      position: absolute;
+      top: 483px;
+      left: 552px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+      color: #005aa9;
+    }
+    .downloads-section .opencart-1x-2x-no {
+      position: absolute;
+      top: 295px;
+      left: 113px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .magento-1x {
+      position: absolute;
+      top: 360px;
+      left: 113px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .magento-2x {
+      position: absolute;
+      top: 422px;
+      left: 113px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .joomla-virtuemart-2x-3x {
+      position: absolute;
+      top: 483px;
+      left: 113px;
+      letter-spacing: 0.01em;
+      line-height: 24px;
+    }
+    .downloads-section .frame-div {
+      align-self: stretch;
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      height: 528px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .downloads-section.frame-group {
+      width: 1350px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 30px;
+      font-size: 16px;
+    }
+
+    #downloads, #contact {
+      display: none !important;
+    }
+    #downloads:target, #contact:target, #home:target {
+      display: block !important;
+    }
+    .frame-parent:has(#downloads:target) #home {
+      display: none !important;
+    }
+    .frame-parent:has(#contact:target) #home {
+      display: none !important;
+    }
+    #downloads:target + #contact {
+      display: none !important;
+    }
+    #contact:target + #downloads {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+
+<div class="home">
+  <div class="cuves-1">
+  </div>
+  <div class="frame-parent">
+    <!-- TRANG CHU -->
+    <div class="frame-group home-active home-section" id="home">
+      <div class="open-api-parent">
+        <b class="open-api-name">OPEN API PORTAL FOR WORD OF LIFE USA</b>
+        <div class="open-api-description">Open API gateway system and international security standard PCI DSS 3.2.1 level 1, meeting strict requirements on security and data processing of the International Security Standards Council, firewall system to protect database, strict information control.</div>
+        <div class="open-api-button-parent">
+          <div class="button-display-name"><a href="https://wordoflifeusa.com" target="_blank">Overview of WOLCG</a></div>
+          <img class="copyrightable-icon" alt="" src="https://clubmusa-bucket.s3.ap-southeast-1.amazonaws.com/Caret_Double_Right_2edd5c7474.svg?width=16&height=16">
+        </div>
+      </div>
+      <div class="frame-container">
+        <div class="open-api-info-api">
+          <div class="open-api-info-group-des">USER INFORMATION PORTAL</div>
+          <div class="a-dng-phng-container">
+            <p class="a-dng-phng">Search for users by username</p>
+            <p class="a-dng-phng">Get user details</p>
+            <p class="a-dng-phng">Request to edit user information</p>
+          </div>
+        </div>
+        <div class="open-api-info-api">
+          <div class="open-api-info-group-des">DIRECT POINTS DEPOSIT PORTAL</div>
+          <div class="a-dng-phng-container">
+            <div class="a-dng-phng">Submit a deposit request using CoinPayments.</div>
+            <div class="a-dng-phng">Submit a deposit request using PayPal.</div>
+          </div>
+        </div>
+        <div class="open-api-info-api">
+          <div class="open-api-info-group-des">PAYMENT GATEWAY USES POINTS</div>
+          <div class="a-dng-phng-container">
+            <div class="a-dng-phng">Pay with points immediately.</div>
+            <div class="a-dng-phng">Transparent point transaction history.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOWNLOADS -->
+    <div class="frame-group downloads-active downloads-section" id="downloads">
+      <div class="downloads-parent">
+        <b class="downloads">Downloads.</b>
+        <div class="downloads-title">WOLCG provides necessary documents so that you can have the most complete information about OPEN API.</div>
+        <div class="downloads-title">In case you need more information, please contact us at email address: support@wordoflifeusa.com for WOLCG support.</div>
+        <div class="downloads-title"></div>
+      </div>
+      <b class="downloads">Technical specification document</b>
+      <div class="downloads-title">This document describes technical information for integration with the OPEN API Gateway.</div>
+      <div class="rectangle-parent">
+        <div class="frame-child">
+        </div>
+        <div class="frame-item">
+        </div>
+        <div class="frame-inner">
+        </div>
+        <div class="line-div">
+        </div>
+        <div class="frame-child1">
+        </div>
+        <div class="frame-child2">
+        </div>
+        <div class="frame-child3">
+        </div>
+        <div class="frame-child4">
+        </div>
+        <div class="frame-child5">
+        </div>
+        <div class="stt">No</div>
+        <b class="stt">No</b>
+        <div class="div">1</div>
+        <div class="div1">2</div>
+        <div class="div2">3</div>
+        <b class="h-thng-thanh">API INFORMATION</b>
+        <b class="link-download">Link Swagger</b>
+        <div class="download"><a href="https://openplatform.wordoflifeusa.com/api/v1/swagger" target="_blank">Links</a></div>
+        <div class="downloads2"><a href="https://openplatform.wordoflifeusa.com/api/v1/swagger" target="_blank">Links</a></div>
+        <div class="downloads3"><a href="https://openplatform.wordoflifeusa.com/api/v1/swagger" target="_blank">Links</a></div>
+        <div class="thanh-ton-pay">USER INFORMATION PORTAL</div>
+        <div class="thanh-ton-bng">DIRECT POINTS DEPOSIT PORTAL</div>
+        <div class="thanh-ton-tr">PAYMENT GATEWAY USES POINTS</div>
+      </div>
+      <b class="downloads">Integrated demo code</b>
+      <div class="rectangle-parent" style="height: 131px; margin-top: 10px">
+        <div class="frame-child14">
+        </div>
+        <div class="frame-child15">
+        </div>
+        <div class="frame-inner">
+        </div>
+        <div class="frame-child18">
+        </div>
+        <div class="frame-child4">
+        </div>
+        <div class="frame-child24">
+        </div>
+        <div class="stt">No</div>
+        <div class="div">1</div>
+        <b class="h-thng-thanh">Language</b>
+        <b class="hng-dn">Guide</b>
+        <div class="ti-liu-tch">
+          <a href="https://clubmusa-bucket.s3.ap-southeast-1.amazonaws.com/images/9c76005e-1a94-4900-bf00-897c86535a62-open-20api-20communication-20protocol.pdf" download>
+            Integrated documentation
+          </a>
+        </div>
+        <div class="thanh-ton-pay">Javascript</div>
+      </div>
+    </div>
+
+    <!-- LIEN HE -->
+    <div class="frame-group contact-active contact-section" id="contact">
+      <div class="frame-wrapper">
+        <div class="contact-help-parent">
+          <b class="contact-help-title">Contact</b>
+          <div class="contact-help-info">If you need assistance, please contact us.:</div>
+          <b class="contact-help-title"></b>
+        </div>
+      </div>
+      <div class="contact-help-parent">
+        <b class="contact-help-title">Contact Business Support</b>
+        <div class="contact-help-info">Email: cs_membership@wordoflifeusa.com</div>
+        <b class="contact-help-title"></b>
+      </div>
+      <div class="contact-help-parent">
+        <b class="contact-help-title">Contact Customer Care</b>
+        <div class="contact-help-info">
+          <p class="e-mail-support">Hotline: <span>+1(504)444-7777</span></p>
+          <p class="e-mail-support">E-mail: cs_membership@wordoflifeusa.com</p>
+        </div>
+        <b class="contact-help-title"></b>
+      </div>
+      <div class="contact-help-parent">
+        <b class="contact-help-title">Contact Technical Support</b>
+        <div class="contact-help-info">
+          <p class="e-mail-support">Hotline: <span>+1(504)444-7777</span></p>
+          <p class="e-mail-support">E-mail: support@wordoflifeusa.com</p>
+        </div>
+        <b class="contact-help-title"></b>
+      </div>
+      <div class="contact-help-parent">
+        <b class="contact-help-title">Note:</b>
+        <div class="contact-help-info">
+          <p class="e-mail-support">Technical hotline only supports integration issues, Website/App system connecting to Open API Gateway.</p>
+          <p class="e-mail-support">For other services, please contact WOLCG customer service center.</p>
+        </div>
+      </div>
+    </div>
+    <div class="copyright-2024-wolcg-all-ri-parent">
+      <div class="copyright-2024-container">
+        <span>COPYRIGHT © 2024 </span>
+        <span class="wolcg-text"><a href="https://wordoflifeusa.com" target="_blank">WOLCG</a></span>
+        <span>, All rights Reserved</span>
+      </div>
+    </div>
+  </div>
+  <div class="home-inner">
+    <div class="frame-div">
+      <div class="divheader-body-logo-parent">
+        <div class="divheader-body-logo">
+          <img class="group-icon" alt="" src="https://clubmusa-bucket.s3.ap-southeast-1.amazonaws.com/logo_wolcg_4ed647d460.svg">
+        </div>
+        <a href="https://wordoflifeusa.com" target="_blank" class="wolcg"><b>WOLCG</b></a>
+      </div>
+      <div class="button-display-name"><a href="#">HOME</a></div>
+      <div class="button-display-name"><a href="#downloads">DOWNLOADS</a></div>
+      <div class="button-display-name"><a href="#contact">CONTACT</a></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
